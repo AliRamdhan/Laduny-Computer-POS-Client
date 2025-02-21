@@ -34,3 +34,7 @@ build/
 
 ## ENV ###
 env.properties
+
+# RSA KEY
+/src/main/resources/keys/private.pem
+/src/main/resources/keys/public.pem
