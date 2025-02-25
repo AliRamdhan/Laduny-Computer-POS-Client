@@ -11,11 +11,11 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "laduny/components",
-    "utils": "laduny/lib/utils",
-    "ui": "laduny/components/ui",
-    "lib": "laduny/lib",
-    "hooks": "laduny/hooks"
+    "components": "@/laduny/components",
+    "utils": "@/laduny/lib/utils",
+    "ui": "@/laduny/components/ui",
+    "lib": "@/laduny/lib",
+    "hooks": "@/laduny/hooks"
   },
   "iconLibrary": "lucide"
 }
