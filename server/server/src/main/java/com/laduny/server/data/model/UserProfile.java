@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
+@Table(name = "users_profile")
 @EntityListeners(AuditingEntityListener.class)
 public class UserProfile extends Audit {
 
