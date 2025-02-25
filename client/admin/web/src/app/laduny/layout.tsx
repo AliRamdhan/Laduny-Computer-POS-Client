@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { SidebarInset, SidebarProvider } from "@/laduny/components/ui/sidebar";
 import Header from "@/laduny/components/shared/Header";
-import AppSidebar from "@/laduny/components/shared/Sidebar";
+import AppSidebar from "@/laduny/components/shared/AppSidebar";
 
 export const metadata: Metadata = {
   title: "Dashboard POS System",

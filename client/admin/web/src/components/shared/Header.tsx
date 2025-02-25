@@ -12,15 +12,40 @@ import {
 import { Separator } from "@/laduny/components/ui/separator";
 import { SidebarTrigger } from "@/laduny/components/ui/sidebar";
 import { usePathname } from "next/navigation";
+import { breadcumbNavigation } from "@/laduny/lib/navigation";
 
 const Header = () => {
   const pathname = usePathname();
-  const [isDashboard, setIsDashboard] = useState(false);
+  const [breadcrumbs, setBreadcrumbs] = useState<
+    { title: string; url: string; icon?: string }[]
+  >([]);
 
   useEffect(() => {
-    if (pathname && pathname.startsWith("/laduny/dashboard")) {
-      setIsDashboard(true);
-      console.log("Current path is not under /master/");
+    if (pathname) {
+      const pathSegments = pathname.split("/").filter(Boolean);
+      let breadcrumbItems: { title: string; url: string; icon?: string }[] = [];
+      let accumulatedPath = "";
+
+      pathSegments.forEach((segment) => {
+        accumulatedPath += `/${segment}`;
+
+        const foundItem = breadcumbNavigation.navMain.find((item) =>
+          accumulatedPath.startsWith(item.url)
+        );
+
+        if (
+          foundItem &&
+          !breadcrumbItems.some((b) => b.url === foundItem.url)
+        ) {
+          breadcrumbItems.push({
+            title: foundItem.title,
+            url: foundItem.url,
+            icon: foundItem.icon,
+          });
+        }
+      });
+
+      setBreadcrumbs(breadcrumbItems);
     }
   }, [pathname]);
 
@@ -33,12 +58,24 @@ const Header = () => {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">POS SYSTEM</BreadcrumbLink>
+                <BreadcrumbLink href="/laduny/dashboard">
+                  POS SYSTEM
+                </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Dashboard</BreadcrumbPage>
-              </BreadcrumbItem>
+              {breadcrumbs.map((breadcrumb, index) => (
+                <React.Fragment key={breadcrumb.url}>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    {index === breadcrumbs.length - 1 ? (
+                      <BreadcrumbPage>{breadcrumb.title}</BreadcrumbPage>
+                    ) : (
+                      <BreadcrumbLink href={breadcrumb.url}>
+                        {breadcrumb.title}
+                      </BreadcrumbLink>
+                    )}
+                  </BreadcrumbItem>
+                </React.Fragment>
+              ))}
             </BreadcrumbList>
           </Breadcrumb>
         </div>

@@ -1,7 +1,3 @@
-"use client";
-
-import React, { useEffect } from "react";
-
 import {
   AudioWaveform,
   BookOpen,
@@ -15,18 +11,38 @@ import {
   SquareTerminal,
 } from "lucide-react";
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarRail,
-} from "@/laduny/components/ui/sidebar";
-import NavMain from "./NavMain";
-import NavUser from "./NavUser";
-import NavTitle from "./NavTitle";
+export const breadcumbNavigation = {
+  navMain: [
+    {
+      title: "Dashboard",
+      url: "/laduny/dashboard",
+      icon: "Frame",
+    },
+    {
+      title: "Category Product",
+      url: "/laduny/master/category",
+      icon: "SquareTerminal",
+    },
+    {
+      title: "Product",
+      url: "/master/product",
+      icon: "SquareTerminal",
+    },
 
-const data = {
+    {
+      title: "Sales Order",
+      url: "/sales/order",
+      icon: "BookOpen",
+    },
+    {
+      title: "Set FOC / Discount",
+      url: "/sales/discount",
+      icon: "BookOpen",
+    },
+  ],
+};
+
+export const sidebarNavigation = {
   user: {
     name: "shadcn",
     email: "m@example.com",
@@ -157,22 +173,3 @@ const data = {
     },
   ],
 };
-const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
-  return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <NavTitle title="POS SYSTEM" />
-      </SidebarHeader>
-      <SidebarContent>
-        <NavMain items={data.navMain} />
-        {/* <NavProjects projects={data.projects} /> */}
-      </SidebarContent>
-      <SidebarFooter>
-        <NavUser user={data.user} />
-      </SidebarFooter>
-      <SidebarRail />
-    </Sidebar>
-  );
-};
-
-export default AppSidebar;
