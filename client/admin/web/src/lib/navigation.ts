@@ -18,26 +18,61 @@ export const breadcumbNavigation = {
       url: "/laduny/dashboard",
       icon: "Frame",
     },
+
     {
       title: "Category Product",
       url: "/laduny/master/category",
-      icon: "SquareTerminal",
+      icon: "Frame",
     },
     {
       title: "Product",
-      url: "/master/product",
-      icon: "SquareTerminal",
+      url: "/laduny/master/product",
+      icon: "Frame",
     },
 
     {
       title: "Sales Order",
-      url: "/sales/order",
-      icon: "BookOpen",
+      url: "/laduny/sales/order",
+      icon: "Frame",
+    },
+
+    {
+      title: "Purchase Order",
+      url: "/laduny/purchase/oder",
+      icon: "Frame",
+    },
+
+    {
+      title: "Stock",
+      url: "/laduny/inventory/stock_adjustment",
+      icon: "Frame",
     },
     {
-      title: "Set FOC / Discount",
-      url: "/sales/discount",
-      icon: "BookOpen",
+      title: "Stock",
+      url: "/laduny/inventory/stock_opname",
+      icon: "Frame",
+    },
+
+    {
+      title: "Sales Report",
+      url: "/report/sales",
+      icon: "Frame",
+    },
+    {
+      title: "Stock Report",
+      url: "/report/stock",
+      icon: "Frame",
+    },
+    {
+      title: "Stock Flow",
+      url: "/report/movement",
+      icon: "Frame",
+    },
+
+    {
+      title: "Employee User",
+      url: "/laduny/user",
+      icon: "Frame",
     },
   ],
 };
@@ -68,7 +103,7 @@ export const sidebarNavigation = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/dashboard",
+      url: "/laduny/dashboard",
       icon: Frame,
     },
     {
@@ -79,11 +114,11 @@ export const sidebarNavigation = {
       items: [
         {
           title: "Category Product",
-          url: "/master/category",
+          url: "/laduny/master/category",
         },
         {
           title: "Product",
-          url: "/master/product",
+          url: "/laduny/master/product",
         },
       ],
     },
@@ -94,11 +129,7 @@ export const sidebarNavigation = {
       items: [
         {
           title: "Sales Order",
-          url: "/sales/order",
-        },
-        {
-          title: "Set FOC / Discount",
-          url: "/sales/discount",
+          url: "/laduny/sales/order",
         },
       ],
     },
@@ -109,7 +140,7 @@ export const sidebarNavigation = {
       items: [
         {
           title: "Purchase Order",
-          url: "/purchase/oder",
+          url: "/laduny/purchase/oder",
         },
       ],
     },
@@ -120,7 +151,11 @@ export const sidebarNavigation = {
       items: [
         {
           title: "Stock",
-          url: "/inventory/stock",
+          url: "/laduny/inventory/stock_adjustment",
+        },
+        {
+          title: "Stock",
+          url: "/laduny/inventory/stock_opname",
         },
       ],
     },
@@ -149,8 +184,8 @@ export const sidebarNavigation = {
       icon: BookOpen,
       items: [
         {
-          title: "Registered User",
-          url: "/user",
+          title: "Employee User",
+          url: "/laduny/user",
         },
       ],
     },

@@ -1,19 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
-
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import React from "react";
 
 import {
   Sidebar,
@@ -35,7 +22,6 @@ const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={sidebarNavigation.navMain} />
-        {/* <NavProjects projects={sidebarNavigation.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={sidebarNavigation.user} />
