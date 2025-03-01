@@ -40,7 +40,6 @@ export const AgGridProvider = ({ children }: { children: ReactNode }) => {
         sortable: true,
         filter: true,
         resizable: true,
-        flex: 1,
         minWidth: 150,
       },
       pagination: true,

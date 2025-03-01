@@ -24,7 +24,7 @@ export const categoriesData: CategoryProductResponse[] = [
   },
 ];
 
-export const products: ProductResponse[] = [
+export const productsData: ProductResponse[] = [
   {
     id: 101,
     category_id: 1,
