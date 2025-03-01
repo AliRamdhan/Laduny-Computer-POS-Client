@@ -26,6 +26,7 @@ const ActionButtonList = ({
   data,
   token,
   name,
+  isProduct,
 }: ActionButtonListProps) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [dataId, setDataId] = useState<string>(data.id);
@@ -67,7 +68,7 @@ const ActionButtonList = ({
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="w-full flex gap-2">
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger>
           <Button variant="edit" size="icon">

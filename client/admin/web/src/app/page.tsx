@@ -7,7 +7,6 @@ const Page = () => {
   const router = useRouter();
 
   useEffect(() => {
-    localStorage.setItem("token", `${process.env.NEXT_AUTH_SECRET}`);
     router.push("/laduny/dashboard");
   }, [router]);
 
