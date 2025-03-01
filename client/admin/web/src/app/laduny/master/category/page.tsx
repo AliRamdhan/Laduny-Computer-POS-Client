@@ -1,7 +1,8 @@
 import React from "react";
+import CategoryProductListWrapper from "./_components/CategoryProductListWrapper";
 
 const page = () => {
-  return <div>page</div>;
+  return <CategoryProductListWrapper />;
 };
 
 export default page;
