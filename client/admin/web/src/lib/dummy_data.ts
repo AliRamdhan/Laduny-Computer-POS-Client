@@ -1,7 +1,7 @@
 import { CategoryProductResponse } from "@/laduny/types/category";
 import { ProductResponse } from "@/laduny/types/product";
 
-export const categories: CategoryProductResponse[] = [
+export const categoriesData: CategoryProductResponse[] = [
   {
     id: 1,
     name: "Electronics",

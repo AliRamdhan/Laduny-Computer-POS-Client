@@ -7,6 +7,7 @@ import {
   DialogTrigger,
 } from "@/laduny/components/ui/dialog";
 import { CategoryProductResponse } from "@/laduny/types/category";
+import CategoryProductFormWrapper from "@/laduny/app/laduny/master/category/_components/CategoryProductFormWrapper";
 
 interface ActionButtonListProps {
   data: { id: string };
@@ -25,10 +26,6 @@ const ActionButtonList = ({
   data,
   token,
   name,
-  isCategoryProduct,
-  isProduct,
-  categoriesData,
-  isProductStock,
 }: ActionButtonListProps) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [dataId, setDataId] = useState<string>(data.id);
@@ -40,11 +37,8 @@ const ActionButtonList = ({
     if (confirm("Are you sure you want to delete this data?")) {
       try {
         setIsDeleting(true);
-        // const response = await DeletePOSData(name, id, token);
-        // if (response) {
         alert("Successfully removed data");
         refreshData();
-        // }
       } catch (error) {
         alert("An error occurred while deleting the data.");
         console.error(error);
@@ -81,7 +75,13 @@ const ActionButtonList = ({
           </Button>
         </DialogTrigger>
         <DialogContent className="mx-auto w-full px-4 py-8 sm:px-6 lg:px-8">
-          Category Form
+          <CategoryProductFormWrapper
+            id={dataId}
+            onSuccess={() => {
+              refreshData();
+              setIsDialogOpen(false);
+            }}
+          />
         </DialogContent>
       </Dialog>
 
