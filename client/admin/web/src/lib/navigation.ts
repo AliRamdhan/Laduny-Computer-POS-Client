@@ -32,7 +32,7 @@ export const breadcumbNavigation = {
 
     {
       title: "Sales Order",
-      url: "/laduny/sales/order",
+      url: "/laduny/sales",
       icon: "Frame",
     },
 
@@ -129,7 +129,7 @@ export const sidebarNavigation = {
       items: [
         {
           title: "Sales Order",
-          url: "/laduny/sales/order",
+          url: "/laduny/sales",
         },
       ],
     },

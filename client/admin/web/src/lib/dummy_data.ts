@@ -1,5 +1,6 @@
 import { CategoryProductResponse } from "@/laduny/types/category";
 import { ProductResponse } from "@/laduny/types/product";
+import { SalesOrderResponse } from "../types/sales";
 
 export const categoriesData: CategoryProductResponse[] = [
   {
@@ -54,5 +55,116 @@ export const productsData: ProductResponse[] = [
     updated_by: "admin",
     created_time: "2025-02-28T12:30:00Z",
     updated_time: "2025-02-28T12:30:00Z",
+  },
+];
+
+export const salesOrdersData: SalesOrderResponse[] = [
+  {
+    id: "SO12345",
+    amount: 500,
+    invoiceStatus: "PAID",
+    orderDate: "2025-03-10",
+    invoiceDetails: [
+      {
+        product: {
+          id: 1,
+          category_id: 101,
+          name: "Wireless Mouse",
+          description: "A comfortable wireless mouse.",
+          sku_code: "WM12345",
+          sell_price: 25,
+          buy_price: 15,
+          status: "ACTIVE",
+          show_web: true,
+          created_by: "admin",
+          updated_by: "admin",
+          created_time: "2025-01-15T10:00:00Z",
+          updated_time: "2025-03-05T14:00:00Z",
+        },
+        productName: "Wireless Mouse",
+        quantity: 10,
+        price: 25,
+        amount: 250,
+      },
+      {
+        product: {
+          id: 2,
+          category_id: 102,
+          name: "Keyboard",
+          description: "A mechanical keyboard for gaming.",
+          sku_code: "KB67890",
+          sell_price: 50,
+          buy_price: 35,
+          status: "ACTIVE",
+          show_web: true,
+          created_by: "admin",
+          updated_by: "admin",
+          created_time: "2025-01-16T10:30:00Z",
+          updated_time: "2025-03-06T12:00:00Z",
+        },
+        productName: "Mechanical Keyboard",
+        quantity: 5,
+        price: 50,
+        amount: 250,
+      },
+    ],
+    createdTime: "2025-03-10T09:00:00Z",
+    updatedTime: "2025-03-10T09:15:00Z",
+    createdBy: "admin",
+    updatedBy: "admin",
+  },
+  {
+    id: "SO12346",
+    amount: 350,
+    invoiceStatus: "PENDING",
+    orderDate: "2025-03-11",
+    invoiceDetails: [
+      {
+        product: {
+          id: 3,
+          category_id: 103,
+          name: "Laptop Stand",
+          description: "An adjustable laptop stand for ergonomic use.",
+          sku_code: "LS23456",
+          sell_price: 30,
+          buy_price: 20,
+          status: "ACTIVE",
+          show_web: true,
+          created_by: "admin",
+          updated_by: "admin",
+          created_time: "2025-01-20T08:00:00Z",
+          updated_time: "2025-03-07T10:00:00Z",
+        },
+        productName: "Laptop Stand",
+        quantity: 10,
+        price: 30,
+        amount: 300,
+      },
+      {
+        product: {
+          id: 4,
+          category_id: 104,
+          name: "USB-C Hub",
+          description: "A USB-C hub for connecting multiple devices.",
+          sku_code: "UCH78901",
+          sell_price: 50,
+          buy_price: 35,
+          status: "ACTIVE",
+          show_web: true,
+          created_by: "admin",
+          updated_by: "admin",
+          created_time: "2025-01-25T11:00:00Z",
+          updated_time: "2025-03-08T13:00:00Z",
+        },
+        productName: "USB-C Hub",
+        quantity: 1,
+        price: 50,
+        amount: 50,
+      },
+    ],
+    createdTime: "2025-03-11T09:00:00Z",
+    updatedTime: "2025-03-11T09:15:00Z",
+    createdBy: "admin",
+    updatedBy: "admin",
   },
 ];
